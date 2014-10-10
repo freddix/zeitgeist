@@ -1,12 +1,13 @@
 Summary:	Framework providing Desktop activity awareness
 Name:		zeitgeist
 Version:	0.9.14
-Release:	3
+Release:	4
 License:	LGPL v2
 Group:		Daemons
 Source0:	http://launchpad.net/zeitgeist/0.9/%{version}/+download/%{name}-%{version}.tar.xz
 # Source0-md5:	92371b864515389ffe7d70569f0bc9ed
 URL:		http://launchpad.net/zeitgeist
+Patch0:		%{name}-gio.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -54,6 +55,7 @@ This is the package containing the header files for Zeitgeist library.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__intltoolize}
