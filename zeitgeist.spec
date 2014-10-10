@@ -1,7 +1,7 @@
 Summary:	Framework providing Desktop activity awareness
 Name:		zeitgeist
 Version:	0.9.14
-Release:	2
+Release:	3
 License:	LGPL v2
 Group:		Daemons
 Source0:	http://launchpad.net/zeitgeist/0.9/%{version}/+download/%{name}-%{version}.tar.xz
@@ -69,6 +69,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %py_postclean
 
